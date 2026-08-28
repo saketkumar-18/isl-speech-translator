@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ISL Voice — Indian Sign Language to Speech</title>
+<meta name="description" content="Real-time Indian Sign Language to text and speech translation, running entirely on your device.">
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤟</text></svg>">
+</head>
+<body>
+<header>
+  <div class="brand">
+    <span class="logo" aria-hidden="true">🤟</span>
+    <div>
+      <h1>ISL Voice</h1>
+      <p class="tagline">Indian Sign Language → Text &amp; Speech · 100% on-device</p>
+    </div>
+  </div>
+  <div class="badges">
+    <span class="badge" id="modelBadge" title="Sequence model: bidirectional GRU + attention over MediaPipe hand landmarks">GRU+Attn</span>
+    <span class="badge" id="privacyBadge" title="No video ever leaves your device">🔒 Private</span>
+  </div>
+</header>
+
+<main>
+  <!-- ============ camera panel ============ -->
+  <section class="panel camera-panel" aria-label="Camera and sign recognition">
+    <div class="video-wrap">
+      <video id="video" playsinline muted aria-label="Live camera feed"></video>
+      <canvas id="overlay" aria-hidden="true"></canvas>
+      <div id="camStatus" class="cam-status">
+        <p>Camera is off.</p>
+        <button id="btnStart" class="primary big">▶ Start camera</button>
+        <p class="hint">Your video is processed locally in the browser — nothing is uploaded.</p>
+      </div>
+      <div id="liveSign" class="live-sign" hidden>
+        <span id="liveSignText">—</span>
+        <span id="liveSignConf" class="conf"></span>
+      </div>
+    </div>
+
+    <div class="controls">
+      <button id="btnStop" class="secondary" hidden>■ Stop camera</button>
+      <button id="btnClear" class="secondary">⌫ Clear sentence</button>
+      <button id="btnSpeak" class="primary">🔊 Speak sentence</button>
+      <label class="switch" title="Automatically add a sign to the sentence when recognized with high confidence">
+        <input type="checkbox" id="autoCommit" checked>
+        <span>Auto-add signs</span>
+      </label>
+    </div>
+
+    <div class="attention-strip" aria-hidden="true">
+      <div class="attention-label">Temporal attention (which frames the model reads)</div>
+      <canvas id="attnCanvas" width="480" height="36"></canvas>
+    </div>
+  </section>
+
+  <!-- ============ sentence panel ============ -->
+  <section class="panel sentence-panel" aria-label="Translated sentence">
+    <h2>Translation</h2>
+    <div id="sentence" class="sentence" role="status" aria-live="polite">
+      <span class="placeholder">Sign in front of the camera — recognized words appear here…</span>
+    </div>
+    <div class="candidates">
+      <h3>Top candidates</h3>
+      <ol id="topK"></ol>
+    </div>
+  </section>
+
+  <!-- ============ demo + vocabulary ============ -->
+  <section class="panel vocab-panel" aria-label="Demo and vocabulary">
+    <h2>Try a demo sign <span class="hint">(no camera needed)</span></h2>
+    <p class="hint">These are real landmark sequences extracted from the ISLRTC dictionary videos.</p>
+    <div id="demoButtons" class="demo-grid"></div>
+
+    <h2>Vocabulary (<span id="vocabCount">…</span> signs)</h2>
+    <p class="hint">Trained on the official ISLRTC data.gov.in dictionary. Categories: greetings, needs, medical &amp; emergency, family, daily life, questions, numbers.</p>
+    <div id="vocabList" class="vocab-grid"></div>
+  </section>
+</main>
+
+<footer>
+  <p>
+    Capstone project · Saket Kumar · IIT Guwahati (23035010051) ·
+    Data: <a href="https://data.gov.in" rel="noopener">ISLRTC / data.gov.in dictionary</a> ·
+    <a href="https://github.com/saketkumar-18/isl-speech-translator" rel="noopener">GitHub</a>
+  </p>
+  <p class="ethics">⚠️ Assistive prototype — not a substitute for certified ISL interpreters in medical or legal settings. See the ethics statement in the repository.</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/onnxruntime-web@1.17.3/dist/ort.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.14/vision_bundle.mjs" type="module"></script>
+<script type="module">
+  import { FilesetResolver, HandLandmarker } from "https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.14/vision_bundle.mjs";
+  window.FilesetResolver = FilesetResolver;
+  window.HandLandmarker = HandLandmarker;
+</script>
+<script type="module" src="app.js"></script>
+</body>
+</html>

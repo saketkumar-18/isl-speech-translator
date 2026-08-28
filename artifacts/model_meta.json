@@ -1,0 +1,221 @@
+{
+ "classes": [
+  "ambulance",
+  "bad",
+  "bath",
+  "big",
+  "book",
+  "bread",
+  "cold",
+  "come",
+  "danger",
+  "doctor",
+  "drink",
+  "eat",
+  "eight",
+  "emergency",
+  "fast",
+  "father",
+  "five",
+  "food",
+  "four",
+  "friend",
+  "give",
+  "go",
+  "good",
+  "good morning",
+  "good night",
+  "happy",
+  "he",
+  "hello",
+  "help",
+  "home",
+  "hospital",
+  "hot",
+  "how many",
+  "hundred",
+  "hungry",
+  "i",
+  "love",
+  "medicine",
+  "milk",
+  "money",
+  "mother",
+  "new",
+  "nice to meet you",
+  "nine",
+  "no",
+  "old",
+  "one",
+  "pain",
+  "please",
+  "read",
+  "rice",
+  "sad",
+  "school",
+  "see you tomorrow",
+  "seven",
+  "she",
+  "sit",
+  "six",
+  "sleep",
+  "slow",
+  "small",
+  "sorry",
+  "stop",
+  "take",
+  "tea",
+  "ten",
+  "thank you",
+  "three",
+  "two",
+  "wait",
+  "walk",
+  "water",
+  "we",
+  "what",
+  "what is your name",
+  "where",
+  "who",
+  "why",
+  "work",
+  "write",
+  "yes",
+  "you"
+ ],
+ "seq_len": 48,
+ "frame_feat": 128,
+ "feature_spec": "v1",
+ "full_vocab_train_accuracy": 0.9797979797979798,
+ "full_vocab_train_macro_f1": 0.9837398373983739,
+ "lovo": {
+  "gru_attn": {
+   "lovo_accuracy": 0.06666666666666667,
+   "runs": 30,
+   "correct": 2,
+   "per_word": {
+    "bad": [
+     0,
+     0
+    ],
+    "bath": [
+     1,
+     0,
+     1
+    ],
+    "book": [
+     0,
+     0
+    ],
+    "come": [
+     0,
+     0
+    ],
+    "fast": [
+     0,
+     0
+    ],
+    "good": [
+     0,
+     0
+    ],
+    "hungry": [
+     0,
+     0
+    ],
+    "no": [
+     0,
+     0
+    ],
+    "please": [
+     0,
+     0,
+     0
+    ],
+    "sit": [
+     0,
+     0
+    ],
+    "sorry": [
+     0,
+     0,
+     0
+    ],
+    "thank you": [
+     0,
+     0
+    ],
+    "work": [
+     0,
+     0,
+     0
+    ]
+   },
+   "train_seconds": 3847.9
+  },
+  "frame_mlp": {
+   "lovo_accuracy": 0.06666666666666667,
+   "runs": 30,
+   "correct": 2,
+   "per_word": {
+    "bad": [
+     0,
+     0
+    ],
+    "bath": [
+     0,
+     0,
+     0
+    ],
+    "book": [
+     0,
+     0
+    ],
+    "come": [
+     0,
+     0
+    ],
+    "fast": [
+     0,
+     0
+    ],
+    "good": [
+     0,
+     0
+    ],
+    "hungry": [
+     0,
+     0
+    ],
+    "no": [
+     0,
+     0
+    ],
+    "please": [
+     1,
+     0,
+     1
+    ],
+    "sit": [
+     0,
+     0
+    ],
+    "sorry": [
+     0,
+     0,
+     0
+    ],
+    "thank you": [
+     0,
+     0
+    ],
+    "work": [
+     0,
+     0,
+     0
+    ]
+   },
+   "train_seconds": 76.8
+  }
+ }
+}

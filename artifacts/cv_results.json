@@ -1,0 +1,134 @@
+{
+ "protocol": "leave-one-variant-out (words with >=2 sign variants)",
+ "gru_attn": {
+  "lovo_accuracy": 0.06666666666666667,
+  "runs": 30,
+  "correct": 2,
+  "per_word": {
+   "bad": [
+    0,
+    0
+   ],
+   "bath": [
+    1,
+    0,
+    1
+   ],
+   "book": [
+    0,
+    0
+   ],
+   "come": [
+    0,
+    0
+   ],
+   "fast": [
+    0,
+    0
+   ],
+   "good": [
+    0,
+    0
+   ],
+   "hungry": [
+    0,
+    0
+   ],
+   "no": [
+    0,
+    0
+   ],
+   "please": [
+    0,
+    0,
+    0
+   ],
+   "sit": [
+    0,
+    0
+   ],
+   "sorry": [
+    0,
+    0,
+    0
+   ],
+   "thank you": [
+    0,
+    0
+   ],
+   "work": [
+    0,
+    0,
+    0
+   ]
+  },
+  "train_seconds": 3847.9
+ },
+ "frame_mlp": {
+  "lovo_accuracy": 0.06666666666666667,
+  "runs": 30,
+  "correct": 2,
+  "per_word": {
+   "bad": [
+    0,
+    0
+   ],
+   "bath": [
+    0,
+    0,
+    0
+   ],
+   "book": [
+    0,
+    0
+   ],
+   "come": [
+    0,
+    0
+   ],
+   "fast": [
+    0,
+    0
+   ],
+   "good": [
+    0,
+    0
+   ],
+   "hungry": [
+    0,
+    0
+   ],
+   "no": [
+    0,
+    0
+   ],
+   "please": [
+    1,
+    0,
+    1
+   ],
+   "sit": [
+    0,
+    0
+   ],
+   "sorry": [
+    0,
+    0,
+    0
+   ],
+   "thank you": [
+    0,
+    0
+   ],
+   "work": [
+    0,
+    0,
+    0
+   ]
+  },
+  "train_seconds": 76.8
+ },
+ "num_classes": 82,
+ "num_sequences": 99,
+ "multi_variant_words": 13
+}

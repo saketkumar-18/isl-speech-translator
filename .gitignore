@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+data/videos/
+data/landmarks.npz
+data/landmarks_meta.json
+artifacts/*.pt
+node_modules/
+.vercel/
+*.egg-info/

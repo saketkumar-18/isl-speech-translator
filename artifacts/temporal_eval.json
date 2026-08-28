@@ -1,0 +1,12 @@
+{
+ "gru_attn": {
+  "train_acc": 1.0,
+  "perturbed_acc": 0.8409090909090909
+ },
+ "frame_mlp": {
+  "train_acc": 0.8383838383838383,
+  "perturbed_acc": 0.6691919191919192
+ },
+ "temporal_advantage": 0.1717171717171717,
+ "views_per_seq": 4
+}
