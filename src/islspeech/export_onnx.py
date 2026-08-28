@@ -49,6 +49,17 @@ def main():
                       input_names=["frames", "mask"], output_names=["probs", "attention"],
                       opset_version=17, do_constant_folding=True)
 
+    # torch >= 2.6 dynamo exporter may write weights to <file>.onnx.data;
+    # onnxruntime-web needs a self-contained file -> consolidate.
+    # Also pin IR version to 8 so onnxruntime-web 1.17.x (max IR 9) can load it.
+    import onnx
+    ext = onnx_path + ".data"
+    model_onnx = onnx.load(onnx_path)  # auto-loads external data if present
+    if os.path.exists(ext):
+        os.remove(ext)
+    model_onnx.ir_version = 8
+    onnx.save(model_onnx, onnx_path, save_as_external_data=False)
+
     # verify with onnxruntime + parity vs torch
     import onnxruntime as ort
     sess = ort.InferenceSession(onnx_path)

@@ -8,7 +8,7 @@ with attention models the *temporal dynamics* of signs over MediaPipe hand
 landmarks; the result is exported to ONNX and executed in-browser via
 WebAssembly. No server, no upload, no cost.
 
-> 🤟 **Live demo:** <https://isl-voice.vercel.app> *(URL finalized on deploy)*
+> 🤟 **Live demo:** <https://isl-voice.vercel.app>
 
 ---
 

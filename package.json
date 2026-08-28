@@ -1,0 +1,28 @@
+{
+  "name": "isl-speech-translator",
+  "version": "1.0.0",
+  "description": "**Capstone project · Saket Kumar · IIT Guwahati (Roll 23035010051)**",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs",
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saketkumar-18/isl-speech-translator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/saketkumar-18/isl-speech-translator/issues"
+  },
+  "homepage": "https://github.com/saketkumar-18/isl-speech-translator#readme",
+  "dependencies": {
+    "onnxruntime-node": "^1.17.3"
+  }
+}

@@ -9,3 +9,9 @@ artifacts/*.pt
 node_modules/
 .vercel/
 *.egg-info/
+
+.vercel
+.env*
+_vercel/
+node_modules/
+features_e2e.mjs
